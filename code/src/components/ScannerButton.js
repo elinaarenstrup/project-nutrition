@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-export const Button = ({ onClick, buttonText }) => {
+export const ScannerButton = ({ onClick, buttonText }) => {
   return (
     <Button type="button" onClick={onClick}>
       {buttonText}

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { BarcodeScanner } from "components/BarcodeScanner";
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import { FetchProductButton } from "./components/FetchProductButton"
+import { ScannerButton } from "./components/ScannerButton"
 import { product } from "./reducers/product"
 
 const reducer = combineReducers({
@@ -12,6 +12,9 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 export const App = () => {
+
+  const [showScanner, setShowScanner] = useState(false)
+
   return (
 
     <Provider store={store}>
@@ -25,8 +28,10 @@ export const App = () => {
         Use the field above to test barcodes manually and keep an eye on your
         console in the browser. i.e. Type 7311070347272 - Pågen Gifflar. Yum
       </p> */}
-      <BarcodeScanner /* onDetected={onDetected} */></BarcodeScanner>
-      <FetchProductButton></FetchProductButton>
+      {showScanner && <BarcodeScanner /* onDetected={onDetected} */></BarcodeScanner>}
+      {!showScanner && <ScannerButton onClick={() => {
+        setShowScanner(true)
+      }} />}
     </Provider>
   );
 };
