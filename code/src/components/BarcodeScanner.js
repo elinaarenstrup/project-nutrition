@@ -6,7 +6,7 @@ export const BarcodeScanner = ({ className, onDetected }) => {
   const cameraDivRef = useRef();
 
   Quagga.onDetected((data) => {
-    onDetected(data.code);
+    onDetected(data.codeResult.code);
   });
 
   useLayoutEffect(() => {
