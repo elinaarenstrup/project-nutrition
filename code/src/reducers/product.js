@@ -20,6 +20,7 @@ export const fetchProduct = (barcode) => {
       .then((data) => data.json())
       .then((json) => {
         console.log(json);
+        dispatch(product.actions.addProduct(json))
       });
   }
 }
