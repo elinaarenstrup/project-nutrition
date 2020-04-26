@@ -2,7 +2,6 @@ import React from "react";
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { product } from "./reducers/product"
-import { Scanner } from "components/Scanner";
 import { ProductInformation } from "components/ProductInformation";
 
 

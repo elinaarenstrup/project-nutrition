@@ -1,13 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ui } from "./ui"
+
+const initialState = {
+  product: []
+}
+
 export const product = createSlice({
   name: 'product',
-  initialState: {
-    product: []
-  },
+  initialState: initialState,
   reducers: {
     addProduct: (state, action) => {
       state.product = action.payload
+    },
+    return: () => {
+      return initialState
     }
   }
 })
