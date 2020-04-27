@@ -13,11 +13,13 @@ export const Scanner = () => {
 
   return (
     <ScanGrid>
-      {showScanner && <BarcodeScanner onDetected={(barcode) => {
-        setShowScanner(false)
-        console.log(barcode)
-        dispatch(fetchProduct(barcode))
-      }}></BarcodeScanner>}
+      {showScanner &&
+        <BarcodeScanner onDetected={(barcode) => {
+          setShowScanner(false)
+          console.log(barcode)
+          dispatch(fetchProduct(barcode))
+        }}></BarcodeScanner>
+      }
 
       {!showScanner &&
         <>
@@ -35,14 +37,16 @@ export const Scanner = () => {
 
 const ScanGrid = styled.div`
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: 300px 100px;
   justify-content: center;
   margin: auto;
   padding: 0 40px;
 `
 
 const IconWrapper = styled.p`
+  width: 295px;
   font-size: 200px;
   color: #fff;
   margin: 0;
+  text-align: center;
 `

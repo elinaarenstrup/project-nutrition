@@ -11,6 +11,7 @@ export const StyledButton = ({ onClick, buttonText }) => {
 
 const Button = styled.button`
   background: none;
+  margin: 20px 0;
   padding: 5px 25px;
   border: 2px solid #fff;
   border-radius: 4px;

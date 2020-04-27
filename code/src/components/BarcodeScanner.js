@@ -7,15 +7,22 @@ const Scan = styled.div`
   margin: auto;
 
   > video {
+    position: absolute;
+    top: 83px;
+    right: 50%;
     width: 300px;
     height: 200px;
-    margin-top: 33px;
+    margin-right: -150px;
   }
 
   > canvas {
     width: 0;
     height: 0;
   }
+`
+
+const StyledLoader = styled(Loader)`
+  margin: auto;
 `
 
 export const BarcodeScanner = ({ onDetected }) => {
@@ -56,13 +63,15 @@ export const BarcodeScanner = ({ onDetected }) => {
   return (
     <>
       {initializing &&
-        <Loader
+        <StyledLoader
           type="Puff"
           color="#fff"
           height={50}
           width={50} />
       }
-      <Scan ref={cameraDivRef} />
+      <div>
+        <Scan ref={cameraDivRef} />
+      </div>
     </>
   );
 };
