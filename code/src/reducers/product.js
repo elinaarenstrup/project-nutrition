@@ -27,7 +27,6 @@ export const fetchProduct = (barcode) => {
     fetch(url)
       .then((data) => data.json())
       .then((json) => {
-        console.log(json);
         dispatch(product.actions.addProduct(json))
         dispatch(ui.actions.setLoading(false))
       });

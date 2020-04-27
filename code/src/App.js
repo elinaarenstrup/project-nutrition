@@ -22,3 +22,5 @@ export const App = () => {
     </Provider>
   );
 };
+
+//Style scanner in BarcodeScanner
