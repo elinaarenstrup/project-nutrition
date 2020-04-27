@@ -10,7 +10,10 @@ export const StyledButton = ({ onClick, buttonText }) => {
 }
 
 const Button = styled.button`
-background: red;
-width: 30px;
-height: 30px;
+  background: none;
+  padding: 5px 25px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 24px;
+  color: #fff;
 `

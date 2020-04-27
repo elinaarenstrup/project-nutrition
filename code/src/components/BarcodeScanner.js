@@ -1,8 +1,24 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
+import styled from "styled-components"
 import Quagga from "quagga";
 import Loader from "react-loader-spinner"
 
-export const BarcodeScanner = ({ className, onDetected }) => {
+const Scan = styled.div`
+  margin: auto;
+
+  > video {
+    width: 300px;
+    height: 200px;
+    margin-top: 33px;
+  }
+
+  > canvas {
+    width: 0;
+    height: 0;
+  }
+`
+
+export const BarcodeScanner = ({ onDetected }) => {
   const [initializing, setInitializing] = useState(true);
   const cameraDivRef = useRef();
 
@@ -46,7 +62,7 @@ export const BarcodeScanner = ({ className, onDetected }) => {
           height={50}
           width={50} />
       }
-      <div ref={cameraDivRef} className={className} />
+      <Scan ref={cameraDivRef} />
     </>
   );
 };
