@@ -1,13 +1,24 @@
 # Project Nutrition
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Build an app which scans barcodes on food packages to retrieve the product name and ingredients.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The app was built based on a Quagga component provided by Technigo. We have created a Redux store and reducers to be able to store product information of the scanned product using useDispatch and retreive the information we wanted to display using useSelector. The app is styled using Styled Components.
+
+We pair-programmed using the VS Live Share extension, taking turns to code. If we were to continue working on the projects, we would like to incorporate React Router.
+
+## Tech
+
+* JavaScript ES6
+* React
+* React Redux
+* Redux Toolkit
+* Styled Components
+* JSX
+* Npm package svg-loaders-react
+* Npm packages for FontAwesome
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://fridamaria-barcodescanner.netlify.app/
