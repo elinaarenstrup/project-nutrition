@@ -5,10 +5,7 @@ import { Provider } from "react-redux"
 import { product } from "./reducers/product"
 import { ui } from "./reducers/ui"
 import { ProductInformation } from "components/ProductInformation"
-/* import { LoadingIndicator } from "components/LoadingIndicator" */ //Flyttat till Scanner
 import { Header } from "components/Header"
-
-//fixade indentation för @media, tog bort några semikolon
 
 const Wrapper = styled.div`
   margin: auto;
@@ -34,7 +31,6 @@ export const App = () => {
     <Provider store={store}>
       <Wrapper>
         <Header />
-        {/*         <LoadingIndicator /> */}
         <ProductInformation />
       </Wrapper>
     </Provider>

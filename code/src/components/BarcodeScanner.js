@@ -63,9 +63,7 @@ export const BarcodeScanner = ({ onDetected }) => {
   return (
     <>
       {initializing &&
-        <StyledLoader
-          stroke="#fff"
-          strokeOpacity=".125" />
+        <StyledLoader />
       }
       <Scan ref={cameraDivRef} />
     </>

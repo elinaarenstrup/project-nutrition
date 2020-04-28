@@ -7,12 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 import { Scanner } from "./Scanner"
 
-//tror vi kan ta bort width om vi har fast bredd på knappen?
 const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 300px 100px;
   justify-content: center;
-  /* width: 295px; */
   margin: 50px auto;
   padding: 0 40px;
 `
