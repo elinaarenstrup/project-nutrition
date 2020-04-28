@@ -1,14 +1,14 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState, useLayoutEffect } from "react"
 import styled from "styled-components"
-import Quagga from "quagga";
-import Loader from "react-loader-spinner"
+import Quagga from "quagga"
+import { Puff } from "svg-loaders-react"
 
 const Scan = styled.div`
   margin: auto;
 
   > video {
     position: absolute;
-    top: 83px;
+    top: 250px;
     right: 50%;
     width: 300px;
     height: 200px;
@@ -21,17 +21,17 @@ const Scan = styled.div`
   }
 `
 
-const StyledLoader = styled(Loader)`
+const StyledLoader = styled(Puff)`
   margin: auto;
 `
 
 export const BarcodeScanner = ({ onDetected }) => {
-  const [initializing, setInitializing] = useState(true);
-  const cameraDivRef = useRef();
+  const [initializing, setInitializing] = useState(true)
+  const cameraDivRef = useRef()
 
   Quagga.onDetected((data) => {
-    onDetected(data.codeResult.code);
-  });
+    onDetected(data.codeResult.code)
+  })
 
   useLayoutEffect(() => {
     Quagga.init(
@@ -47,31 +47,27 @@ export const BarcodeScanner = ({ onDetected }) => {
       },
       (err) => {
         if (err) {
-          console.error("Failed to initialize reader", err);
-          return;
+          console.error("Failed to initialize reader", err)
+          return
         }
-        Quagga.start();
-        setInitializing(false);
+        Quagga.start()
+        setInitializing(false)
       }
-    );
+    )
 
     return () => {
-      Quagga.stop();
-    };
-  }, []);
+      Quagga.stop()
+    }
+  }, [])
 
   return (
     <>
       {initializing &&
         <StyledLoader
-          type="Puff"
-          color="#fff"
-          height={50}
-          width={50} />
+          stroke="#fff"
+          strokeOpacity=".125" />
       }
-      <div>
-        <Scan ref={cameraDivRef} />
-      </div>
+      <Scan ref={cameraDivRef} />
     </>
-  );
-};
+  )
+}

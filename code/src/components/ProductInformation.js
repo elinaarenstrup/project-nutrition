@@ -1,15 +1,18 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux"
-import { Scanner } from "./Scanner";
-import { StyledButton } from "./StyledButton"
-import { product } from "../reducers/product"
+import React from "react"
 import styled from "styled-components/macro"
+import { useDispatch, useSelector } from "react-redux"
+import { product } from "../reducers/product"
+import { StyledButton } from "./StyledButton"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
+import { Scanner } from "./Scanner"
 
+//tror vi kan ta bort width om vi har fast bredd på knappen?
 const Wrapper = styled.div`
   display: grid;
   grid-template-rows: 300px 100px;
   justify-content: center;
-  width: 295px;
+  /* width: 295px; */
   margin: 50px auto;
   padding: 0 40px;
 `
@@ -17,16 +20,26 @@ const Wrapper = styled.div`
 const ProductName = styled.h2`
   margin-top: 55px;
   color: #fff;
+  text-align: center;
+`
+
+const Icon = styled.p`
+  margin: 50px 0;
+  color: #fff;
+  font-size: 90px;
+  text-align: center;
 `
 
 const Brands = styled.h3`
   color: #fff;
   margin: 0;
+  text-align: center;
 `
 
 const Text = styled.p`
   color: #fff;
   font-size: 18px;
+  text-align: center;
 `
 
 export const ProductInformation = () => {
@@ -48,7 +61,10 @@ export const ProductInformation = () => {
   } else if (scannedProduct.status === 0) {
     return (
       <Wrapper>
-        <ProductName>Product not found</ProductName>
+        <div>
+          <ProductName>Product not found</ProductName>
+          <Icon><FontAwesomeIcon icon={faExclamationCircle} /></Icon>
+        </div>
         <StyledButton buttonText="Go back" onClick={() => dispatch(product.actions.return())} />
       </Wrapper>
     )
@@ -59,4 +75,4 @@ export const ProductInformation = () => {
       </Wrapper>
     )
   }
-};
+}

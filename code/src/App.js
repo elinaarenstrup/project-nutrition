@@ -1,23 +1,25 @@
 import React from "react";
 import styled from "styled-components"
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { Provider } from 'react-redux'
+import { configureStore, combineReducers } from "@reduxjs/toolkit"
+import { Provider } from "react-redux"
 import { product } from "./reducers/product"
 import { ui } from "./reducers/ui"
-import { ProductInformation } from "components/ProductInformation";
-import { LoadingIndicator } from "components/LoadingIndicator";
+import { ProductInformation } from "components/ProductInformation"
+/* import { LoadingIndicator } from "components/LoadingIndicator" */ //Flyttat till Scanner
 import { Header } from "components/Header"
 
-const Wrapper = styled.div`
-margin: auto;
+//fixade indentation för @media, tog bort några semikolon
 
-@media (min-width: 400px) {  
-background-color: #f64c73;
-border-radius: 20px;
-width: 375px;
-height: 812px;
-margin-top: 50px;
-}
+const Wrapper = styled.div`
+  margin: auto;
+
+  @media (min-width: 400px) {  
+    background-color: #f64c73;
+    border-radius: 20px;
+    width: 375px;
+    height: 812px;
+    margin-top: 50px;
+  }
 `
 
 const reducer = combineReducers({
@@ -32,11 +34,9 @@ export const App = () => {
     <Provider store={store}>
       <Wrapper>
         <Header />
-        <LoadingIndicator />
+        {/*         <LoadingIndicator /> */}
         <ProductInformation />
       </Wrapper>
     </Provider>
-  );
-};
-
-//Style scanner in BarcodeScanner
+  )
+}
