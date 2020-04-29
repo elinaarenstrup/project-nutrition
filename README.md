@@ -21,4 +21,4 @@ We pair-programmed using the VS Live Share extension, taking turns to code. If w
 
 ## View it live
 
-https://fridamaria-barcodescanner.netlify.app/
+https://www.https://barcodescanner-project.netlify.app/
